@@ -30,24 +30,6 @@ exports.showOrder = (req, res) => {
     })
 }
 
-// exports.index = (req, res) => {
-//     Room.findAll({
-//         include: {
-//             model: Customer,
-//             through: {
-//                 model: Order,
-//                 where: {is_done: false}
-//             },
-//             required: false
-//         },
-//         order: [
-//             ['id', 'ASC']
-//         ],
-//     }).then(result => {
-//         res.send(result)
-//     })
-// }
-
 exports.updateCheckin = (req, res) => {
     const { room_id, customer_id, duration, order_end_time} = req.body
     Order.update({

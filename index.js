@@ -34,7 +34,7 @@ app.group('/api/v2', (router)=>{
     router.get('/customers', CustomerController.index)
     router.post('/customer', authenticated, CustomerController.createCustomer)
     router.put('/customer/:customer_id', authenticated, CustomerController.updateCustomer)
-    router.delete('/customer/id', authenticated, CustomerController.deleteCustomer)
+    router.delete('/customer/:id', authenticated, CustomerController.deleteCustomer)
 
     //Order
     router.get('/checkins', authenticated, OrderController.showOrder)
