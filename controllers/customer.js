@@ -2,7 +2,14 @@ const models = require('../models')
 const Customer = models.customer
 
 exports.index = (req, res) => {
-    Customer.findAll().then(item=>res.send(item));
+    Customer.findAll({
+        order: [
+                    
+            [
+                'id', 'ASC'
+            ] 
+    ]
+    }).then(item=>res.send(item));
 }
 
 exports.createCustomer = (req, res) => {
